@@ -1,7 +1,9 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-const PORT = 5000;
+
+require("dotenv").config();
+const PORT = process.env.PORT;
 
 app.engine(".ejs", require("ejs").__express);
 app.set("views", path.join(__dirname, "views"));
